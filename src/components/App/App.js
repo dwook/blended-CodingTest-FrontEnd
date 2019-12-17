@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Route, Switch, Redirect } from 'react-router';
 import Card from '../Card/Card';
+import Details from '../Details/Details';
 import throttle from 'lodash/throttle';
 import './App.scss';
 
@@ -25,15 +27,34 @@ export default class App extends Component {
       this.props.loadMore(this.props.page + 1);
     }
   }
+
   render() {
     const { movies } = this.props;
     return (
       <div className="wrapper">
-        <div className="list-card">
-          {movies.map(movie => (
-            <Card key={movie.id} {...movie} />
-          ))}
-        </div>
+        <Switch>
+          <Route exact path="/" render={() => <Redirect to="/movies" />} />
+          <Route
+            path="/movies/:id"
+            render={routeProps => (
+              <Details
+                {...routeProps}
+                details={this.props.details}
+                onDetailsLoad={this.props.onDetailsLoad}
+              />
+            )}
+          />
+          <Route
+            path="/movies"
+            render={() => (
+              <div className="list-card">
+                {movies.map(movie => (
+                  <Card {...movie} key={movie.id} />
+                ))}
+              </div>
+            )}
+          />
+        </Switch>
       </div>
     );
   }

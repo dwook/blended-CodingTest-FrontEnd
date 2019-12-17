@@ -1,12 +1,17 @@
 import { connect } from 'react-redux';
 import App from '../components/App/App';
-import { getMovies } from '../api';
-import { LOAD_MOVIES, ADD_PAGE_NUMBER } from '../constants/ActionTypes';
+import { getMovies, getMovieDetails } from '../api';
+import {
+  LOAD_MOVIES,
+  ADD_PAGE_NUMBER,
+  GET_MOVIE_DETAILS
+} from '../constants/ActionTypes';
 
 const mapStateToProps = state => {
   return {
     movies: state.movies,
-    page: state.page
+    page: state.page,
+    details: state.details
   };
 };
 
@@ -35,6 +40,19 @@ const mapDispatchToProps = dispatch => {
           dispatch({
             type: ADD_PAGE_NUMBER,
             data: page
+          });
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async onDetailsLoad(id) {
+      try {
+        await getMovieDetails(id).then(res => {
+          console.log(res.data);
+          dispatch({
+            type: GET_MOVIE_DETAILS,
+            data: res.data
           });
         });
       } catch (error) {

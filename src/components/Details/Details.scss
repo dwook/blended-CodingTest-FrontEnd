@@ -1,0 +1,39 @@
+.details {
+  width: 70%;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  .thumbnail {
+    width: 40%;
+    img {
+      width: 80%;
+    }
+  }
+  .info {
+    width: 50%;
+    color: #fff;
+    div {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .title {
+      font-size: 30px;
+      margin-bottom: 20px;
+      border: none;
+    }
+    .genres {
+      border: none;
+      span {
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-right: 10px;
+        background: #dee2e6;
+        color: #212529;
+        font-size: 15px;
+      }
+      margin-bottom: 50px;
+    }
+    .overview {
+    }
+  }
+}
