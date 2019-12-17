@@ -3,6 +3,7 @@ import App from '../components/App/App';
 import { getMovies, getMovieDetails, getMovieActors } from '../api';
 import {
   LOAD_MOVIES,
+  LOAD_MOVIES_MORE,
   ADD_PAGE_NUMBER,
   GET_MOVIE_DETAILS,
   GET_MOVIE_ACTORS
@@ -36,7 +37,7 @@ const mapDispatchToProps = dispatch => {
         await getMovies(page).then(res => {
           console.log(res.data);
           dispatch({
-            type: LOAD_MOVIES,
+            type: LOAD_MOVIES_MORE,
             data: res.data.results
           });
           dispatch({

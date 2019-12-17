@@ -5,43 +5,95 @@
   flex-direction: row;
   .thumbnail {
     width: 40%;
+    .default {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      margin-bottom: 20px;
+      min-height: 450px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #212529;
+    }
     img {
       width: 80%;
+      margin-bottom: 20px;
+    }
+  }
+  .title {
+    width: 90%;
+    font-size: 30px;
+    margin-bottom: 20px;
+    border: none;
+    color: #fff;
+  }
+  .genres {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0 20px;
+    border: none;
+    span {
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin: 10px 10px 0 0;
+      background: #dee2e6;
+      color: #212529;
+      font-size: 15px;
     }
   }
   .info {
     width: 50%;
     color: #fff;
-    div {
-      padding: 10px 0;
+    .row {
+      padding: 15px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     }
-    .title {
-      font-size: 30px;
-      margin-bottom: 20px;
-      border: none;
-    }
-    .genres {
-      border: none;
-      span {
-        padding: 10px 20px;
-        border-radius: 20px;
-        margin-right: 10px;
-        background: #dee2e6;
-        color: #212529;
-        font-size: 15px;
-      }
-      margin-bottom: 50px;
-    }
+
     .ratings {
       span {
         margin-right: 20px;
       }
     }
     .overview {
-      p {
+      .title {
+        font-size: 20px;
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+      }
+    }
+    .actors {
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .list-people {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .person {
+        width: 33%;
+        text-align: center;
+        .thumbnail {
+          width: 100px;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          margin: 0 auto;
+          border-radius: 50%;
+          overflow: hidden;
+          background: rgba(255, 255, 255, 0.2);
+          color: #212529;
+          img {
+            width: 100%;
+          }
+        }
+        .name {
+          margin: 10px 0 25px;
+        }
       }
     }
   }

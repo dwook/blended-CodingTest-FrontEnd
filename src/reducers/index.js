@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import {
   LOAD_MOVIES,
+  LOAD_MOVIES_MORE,
   ADD_PAGE_NUMBER,
   GET_MOVIE_DETAILS,
   GET_MOVIE_ACTORS
@@ -16,6 +17,8 @@ const initialState = {
 function moviesReducers(state = initialState.movies, action) {
   switch (action.type) {
     case LOAD_MOVIES:
+      return [...action.data];
+    case LOAD_MOVIES_MORE:
       return [...state, ...action.data];
     default:
       return state;
@@ -35,6 +38,8 @@ function detailsReducers(state = initialState.details, action) {
   switch (action.type) {
     case GET_MOVIE_DETAILS:
       return action.data;
+    case LOAD_MOVIES:
+      return {};
     default:
       return state;
   }
@@ -44,6 +49,8 @@ function actorsReducers(state = initialState.details, action) {
   switch (action.type) {
     case GET_MOVIE_ACTORS:
       return action.data;
+    case LOAD_MOVIES:
+      return [];
     default:
       return state;
   }

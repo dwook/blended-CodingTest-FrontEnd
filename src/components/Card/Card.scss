@@ -3,6 +3,14 @@
   padding: 10px;
   box-sizing: border-box;
   position: relative;
+  &:hover {
+    .thumbnail,
+    .info {
+      transform: scale(1.1);
+      -webkit-transition: 0.5s ease;
+      transition: 0.5s ease;
+    }
+  }
   .thumbnail {
     height: 90%;
     position: relative;
@@ -33,7 +41,7 @@
   .info {
     position: absolute;
     width: 90%;
-    top: 75%;
+    top: 70%;
     padding: 0 20px;
     box-sizing: border-box;
     color: #fff;

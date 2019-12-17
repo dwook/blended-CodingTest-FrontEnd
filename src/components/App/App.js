@@ -22,6 +22,7 @@ export default class App extends Component {
             )}
           />
           <Route
+            exact
             path="/movies"
             render={() => (
               <List
