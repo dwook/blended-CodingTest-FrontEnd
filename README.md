@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 실행방법
 
-## Available Scripts
+```
+git clone https://github.com/dwook/blended-CodingTest-FrontEnd.git
+cd blended-CodingTest-FrontEnd
+yarn install
+yarn start
+```
 
-In the project directory, you can run:
+## 요구사항
 
-### `yarn start`
+1. User can see all the latest movie on the front page
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [x] `GET/movie/latest` API는 응답이 영화가 한편만 나와서 `GET/discover/movie` API를 사용해 primary_release_date 기준으로 현재시간에서 내림차순으로 보여지게 하였습니다.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+2. User scroll down to see all other movies according to release date
 
-### `yarn test`
+- [x] 화면 하단으로 스크롤 할때마다, 영화가 20개씩 추가되도록 구현하였습니다.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3.  User can click on any of the movie to go to their own separate page
 
-### `yarn build`
+- [x] React Router를 이용하여, 영화를 클릭하면 상세페이지(/movies/:id)로 이동할 수 있게 하였습니다.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4.  User can then see all about the movie ratings, about, actors present on each separate movie page
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- [x] 상세페이지에서 영화평점, 개요, 배우 정보를 보여지게 하였습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 문제해결
 
-### `yarn eject`
+-
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 배운점 및 아쉬운점
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+-
