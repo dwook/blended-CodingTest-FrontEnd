@@ -21,3 +21,11 @@ export const getMovieDetails = id => {
     }
   });
 };
+
+export const getMovieActors = id => {
+  return axios.get(`/movie/${id}/credits`, {
+    params: {
+      api_key: API_KEY
+    }
+  });
+};

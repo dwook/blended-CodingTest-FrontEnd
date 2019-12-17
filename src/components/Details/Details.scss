@@ -33,7 +33,16 @@
       }
       margin-bottom: 50px;
     }
+    .ratings {
+      span {
+        margin-right: 20px;
+      }
+    }
     .overview {
+      p {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
     }
   }
 }

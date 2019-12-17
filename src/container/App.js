@@ -1,17 +1,19 @@
 import { connect } from 'react-redux';
 import App from '../components/App/App';
-import { getMovies, getMovieDetails } from '../api';
+import { getMovies, getMovieDetails, getMovieActors } from '../api';
 import {
   LOAD_MOVIES,
   ADD_PAGE_NUMBER,
-  GET_MOVIE_DETAILS
+  GET_MOVIE_DETAILS,
+  GET_MOVIE_ACTORS
 } from '../constants/ActionTypes';
 
 const mapStateToProps = state => {
   return {
     movies: state.movies,
     page: state.page,
-    details: state.details
+    details: state.details,
+    actors: state.actors
   };
 };
 
@@ -29,7 +31,7 @@ const mapDispatchToProps = dispatch => {
         console.log(error);
       }
     },
-    async loadMore(page) {
+    async onLoadMore(page) {
       try {
         await getMovies(page).then(res => {
           console.log(res.data);
@@ -53,6 +55,13 @@ const mapDispatchToProps = dispatch => {
           dispatch({
             type: GET_MOVIE_DETAILS,
             data: res.data
+          });
+        });
+        await getMovieActors(id).then(res => {
+          console.log(res.data);
+          dispatch({
+            type: GET_MOVIE_ACTORS,
+            data: res.data.cast
           });
         });
       } catch (error) {

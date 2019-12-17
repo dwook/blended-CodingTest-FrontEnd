@@ -1,35 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router';
-import Card from '../Card/Card';
+import List from '../List/List';
 import Details from '../Details/Details';
-import throttle from 'lodash/throttle';
 import './App.scss';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.handleScroll = throttle(this.handleScroll.bind(this), 1000);
-  }
-  componentDidMount() {
-    this.props.onLoad();
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll() {
-    if (
-      window.innerHeight + window.scrollY >=
-      document.body.offsetHeight - 200
-    ) {
-      this.props.loadMore(this.props.page + 1);
-    }
-  }
-
   render() {
-    const { movies } = this.props;
     return (
       <div className="wrapper">
         <Switch>
@@ -40,6 +16,7 @@ export default class App extends Component {
               <Details
                 {...routeProps}
                 details={this.props.details}
+                actors={this.props.actors}
                 onDetailsLoad={this.props.onDetailsLoad}
               />
             )}
@@ -47,11 +24,12 @@ export default class App extends Component {
           <Route
             path="/movies"
             render={() => (
-              <div className="list-card">
-                {movies.map(movie => (
-                  <Card {...movie} key={movie.id} />
-                ))}
-              </div>
+              <List
+                movies={this.props.movies}
+                page={this.props.page}
+                onLoad={this.props.onLoad}
+                onLoadMore={this.props.onLoadMore}
+              />
             )}
           />
         </Switch>
