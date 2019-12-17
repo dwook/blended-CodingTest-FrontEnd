@@ -1,19 +1,30 @@
 import { combineReducers } from 'redux';
-import { LOAD_LATEST_MOVIES } from '../constants/ActionTypes';
+import { LOAD_MOVIES, ADD_PAGE_NUMBER } from '../constants/ActionTypes';
 
 const initialState = {
-  latestMovies: []
+  movies: [],
+  page: 1
 };
 
-function latestMoviesReducers(state = initialState.latestMovies, action) {
+function moviesReducers(state = initialState.movies, action) {
   switch (action.type) {
-    case LOAD_LATEST_MOVIES:
-      return action.data.slice();
+    case LOAD_MOVIES:
+      return [...state, ...action.data];
+    default:
+      return state;
+  }
+}
+
+function pageReducers(state = initialState.page, action) {
+  switch (action.type) {
+    case ADD_PAGE_NUMBER:
+      return action.data;
     default:
       return state;
   }
 }
 
 export default combineReducers({
-  latestMovies: latestMoviesReducers
+  movies: moviesReducers,
+  page: pageReducers
 });
