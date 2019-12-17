@@ -1,0 +1,1 @@
+export const LOAD_LATEST_MOVIES = 'LOAD_LATEST_MOVIES';
