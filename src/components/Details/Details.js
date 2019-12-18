@@ -16,7 +16,7 @@ export default class Details extends Component {
       vote_average
     } = this.props.details;
     const { actors } = this.props;
-    console.log(this.props.details);
+
     return (
       Object.keys(this.props.details).length !== 0 && (
         <div className="details">

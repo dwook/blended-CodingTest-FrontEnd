@@ -9,7 +9,10 @@ function Card({ poster_path, title, id }) {
       <Link to={`/movies/${id}`}>
         <div className="thumbnail">
           {poster_path ? (
-            <img src={BASE_URL_POSTSER + poster_path} alt={title} />
+            <img
+              src={BASE_URL_POSTSER + poster_path}
+              alt={title}
+            />
           ) : (
             <p>No Image</p>
           )}

@@ -7,14 +7,14 @@ import {
   GET_MOVIE_ACTORS
 } from '../constants/ActionTypes';
 
-const initialState = {
+export const initialState = {
   movies: [],
   page: 1,
   details: {},
   actors: []
 };
 
-function moviesReducers(state = initialState.movies, action) {
+export function moviesReducers(state = initialState.movies, action) {
   switch (action.type) {
     case LOAD_MOVIES:
       return [...action.data];
@@ -25,7 +25,7 @@ function moviesReducers(state = initialState.movies, action) {
   }
 }
 
-function pageReducers(state = initialState.page, action) {
+export function pageReducers(state = initialState.page, action) {
   switch (action.type) {
     case ADD_PAGE_NUMBER:
       return action.data;
@@ -34,7 +34,7 @@ function pageReducers(state = initialState.page, action) {
   }
 }
 
-function detailsReducers(state = initialState.details, action) {
+export function detailsReducers(state = initialState.details, action) {
   switch (action.type) {
     case GET_MOVIE_DETAILS:
       return action.data;
@@ -45,7 +45,7 @@ function detailsReducers(state = initialState.details, action) {
   }
 }
 
-function actorsReducers(state = initialState.details, action) {
+export function actorsReducers(state = initialState.details, action) {
   switch (action.type) {
     case GET_MOVIE_ACTORS:
       return action.data;

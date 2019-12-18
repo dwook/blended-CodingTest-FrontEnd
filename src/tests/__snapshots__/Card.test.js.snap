@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> matches snapshot 1`] = `
+<div
+  className="card"
+>
+  <Link
+    to="/movies/656216"
+  >
+    <div
+      className="thumbnail"
+    >
+      <img
+        alt="Bernie the Dolphin 2"
+        src="https://image.tmdb.org/t/p/w500/r0U3mBQEOJ6kKpxZ0F8WFfjCldK.jpg"
+      />
+    </div>
+    <div
+      className="info"
+    >
+      <div
+        className="title"
+      >
+        Bernie the Dolphin 2
+      </div>
+      <div />
+    </div>
+  </Link>
+</div>
+`;
