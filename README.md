@@ -7,6 +7,10 @@ yarn install
 yarn start
 ```
 
+## 배포
+
+[https://blended-movie.netlify.com/](https://blended-movie.netlify.com//)
+
 ## 요구사항
 
 1. User can see all the latest movie on the front page
