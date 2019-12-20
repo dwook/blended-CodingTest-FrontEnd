@@ -11,6 +11,8 @@ yarn start
 
 [https://blended-movie.netlify.com/](https://blended-movie.netlify.com/)
 
+<img src="screenshot.gif">
+
 ## 요구사항
 
 1. User can see all the latest movie on the front page
