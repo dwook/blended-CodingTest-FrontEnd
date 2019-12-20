@@ -9,7 +9,7 @@ yarn start
 
 ## 배포
 
-[https://blended-movie.netlify.com/](https://blended-movie.netlify.com//)
+[https://blended-movie.netlify.com/](https://blended-movie.netlify.com/)
 
 ## 요구사항
 
